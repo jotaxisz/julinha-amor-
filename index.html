@@ -30,8 +30,6 @@ body {
 }
 
 
-/* BOTÃO */
-
 #startScreen {
 
   padding:15px 30px;
@@ -53,7 +51,6 @@ body {
 }
 
 
-/* CONTEÚDO */
 
 #conteudo {
 
@@ -79,7 +76,6 @@ body {
 }
 
 
-/* ESTROFES */
 
 .carta {
 
@@ -114,7 +110,8 @@ to {
 }
 
 
-/* FINAL */
+
+/* BOTÃO FINAL */
 
 #final {
 
@@ -127,6 +124,30 @@ to {
   margin-top:50px;
 
 }
+
+
+#botaoFinal {
+
+  margin-top:30px;
+
+  padding:15px 30px;
+
+  background:white;
+
+  color:black;
+
+  border:none;
+
+  border-radius:15px;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
 
 
 </style>
@@ -147,7 +168,9 @@ Toque para iniciar ❤️
 
 <div id="conteudo">
 
+
 <div id="texto"></div>
+
 
 
 <div id="final">
@@ -156,7 +179,13 @@ Obrigado por existir ❤️
 
 <br><br>
 
-Eu escolheria você em todas as vidas.
+
+<button id="botaoFinal">
+
+Eu escolheria você para sempre ❤️
+
+</button>
+
 
 </div>
 
@@ -168,6 +197,7 @@ Eu escolheria você em todas as vidas.
 <audio id="audio1" src="intro.mp3"></audio>
 
 <audio id="audio2" src="musica.mp3"></audio>
+
 
 
 
@@ -186,32 +216,60 @@ const audio1 = document.getElementById("audio1");
 
 const audio2 = document.getElementById("audio2");
 
+const botaoFinal = document.getElementById("botaoFinal");
+
 
 
 
 // ==================================
 // COLOQUE SUA CARTA AQUI
-// CADA ITEM É UMA ESTROFE
-// APARECE UMA -> ESPERA 20 SEGUNDOS -> PRÓXIMA
+// CADA ITEM = UMA ESTROFE
+// UMA ESTROFE APARECE
+// ESPERA 20 SEGUNDOS
+// APARECE A PRÓXIMA
 // ==================================
 
 
 const carta = [
 
 
-"COLOQUE A PRIMEIRA ESTROFE AQUI",
+
+amor, por favor fala nunca mais que você atrasou a minha vida você foi uma das melhores coisas que já aconteceram comigo eu sei que as coisas estão muito difíceis na sua vida ultimamente que está te machucando que você tá cansada e que tem dias em que parece que nada faz sentido eu queria tanto poder estar aí agora te abraçar bem forte secar cada lágrima sua e fazer você sentir um pouquinho da paz que você merece eu queria poder tirar esse peso do seu peito nem que fosse por alguns minutos só pra você lembrar como é respirar sem sentir que o mundo inteiro tá caindo sobre você quando você fala que outra pessoa vai cuidar melhor de mim ou que não é a pessoa certa pra mim meu coração aperta você não faz ideia do quanto eu te amo se eu pudesse escolher de novo eu escolheria você se tivesse que escolher mil vezes eu escolheria você nas mil porque é você quem eu amo é você quem eu quero ao meu lado e é com você que eu imagino o meu futuro e nada do que aconteceu até hoje conseguiu mudar isso nem a distância nem os dias difíceis nem o medo nem a tristeza porque o que eu sinto por você é maior do que tudo isso eu não tô com você só pelos dias felizes eu quero estar do seu lado justamente quando tudo parece desabar quero ser o seu porto seguro quero que você sinta que pode descansar em mim quando estiver cansada você não precisa enfrentar tudo isso sozinha porque enquanto eu estiver aqui eu vou segurar a sua mão mesmo que seja de longe eu vou continuar aqui e nunca vou soltar e sobre a distância ela machuca eu sei eu sinto uma saudade absurda de você todos os dias mas ela não é maior do que o que eu sinto nas suas férias se você quiser eu compro a sua passagem pra você vir ficar comigo eu quero poder te abraçar de verdade olhar nos seus olhos cuidar de você fazer carinho em você e aproveitar cada segundo ao seu lado não por obrigação mas porque esse é o meu maior desejo eu não vejo a hora de finalmente olhar pra você e perceber que tudo isso valeu a pena eu fico imaginando como vai ser o nosso primeiro abraço e só de pensar nisso meu coração fica em paz porque é com você que eu quero viver esses momentos e se por algum motivo a gente ainda tiver que esperar mais eu espero espero o tempo que for preciso um mês um ano ou o tempo que a vida pedir porque pra mim vale a pena esperar por você você vale a pena algumas pessoas passam pela nossa vida e deixam lembranças mas você se tornou parte de quem eu sou e eu nunca teria pressa para desistir de alguém que significa tanto pra mim então por favor não desiste da gente por achar que você não é suficiente pra mim você sempre foi e sempre vai ser eu te amo com todo o meu coração e enquanto existir uma chance de ter você na minha vida eu vou continuar escolhendo você todos os dias todas as vezes sem pensar duas vezes porque amar você nunca foi um peso sempre foi um privilégio vida às vezes eu fico pensando em como a nossa mente pode ser cruel com a gente ela pega as nossas maiores feridas e transforma em espelhos fazendo a gente enxergar defeitos onde na verdade só existem marcas de quem lutou demais e eu tenho medo de que você esteja acreditando nesses espelhos quebrados como se eles mostrassem a verdade mas não mostram uma pessoa machucada nunca consegue se enxergar por inteiro ela só enxerga a própria dor e eu queria tanto que por um instante você conseguisse se enxergar pelos meus olhos porque você descobriria uma pessoa linda forte e muito maior do que qualquer sofrimento tem uma frase que diz que quem olha para fora sonha quem olha para dentro desperta eu queria que quando você olhasse para dentro de si encontrasse a mulher incrível que eu conheço e não apenas o sofrimento que você está vivendo agora porque a dor é um momento da sua história não a sua identidade você não é tristeza você não é abandono você não é os problemas da sua vida você é infinitamente maior do que tudo isso e eu espero que um dia você consiga acreditar em si da mesma forma que eu acredito porque você merece enxergar a própria luz .`,
 
 
-"COLOQUE A SEGUNDA ESTROFE AQUI",
+
+`ESTROFE 2:
+
+COLOQUE AQUI A SEGUNDA PARTE.
+
+Exemplo:
+
+Eu sei que as coisas estão difíceis,
+mas eu quero que você saiba que eu estou aqui.`,
 
 
-"COLOQUE A TERCEIRA ESTROFE AQUI",
 
 
-"CONTINUE COLOCANDO SUAS ESTROFES AQUI"
+`ESTROFE 3:
+
+COLOQUE AQUI A TERCEIRA PARTE.
+
+Exemplo:
+
+Eu escolheria você mil vezes,
+porque é você quem eu quero ao meu lado.`,
+
+
+
+
+`ESTROFE 4:
+
+CONTINUE COLOCANDO SUAS ESTROFES AQUI.`
+
 
 
 ];
+
 
 
 
@@ -227,23 +285,19 @@ function escreverCarta(){
 let i = 0;
 
 
-
 function mostrar(){
 
 
 if(i < carta.length){
 
 
-
 let p = document.createElement("p");
 
 
-p.className = "carta";
-
+p.className="carta";
 
 
 p.textContent = carta[i];
-
 
 
 texto.appendChild(p);
@@ -263,16 +317,16 @@ block:"end"
 i++;
 
 
-// TEMPO ENTRE CADA ESTROFE
-// 20000 = 20 segundos
-// 30000 = 30 segundos
-// 10000 = 10 segundos
+
+// 20 segundos
 
 setTimeout(mostrar,20000);
 
 
 
-}else{
+}
+
+else{
 
 
 final.style.display="block";
@@ -284,11 +338,11 @@ final.style.display="block";
 }
 
 
-
 mostrar();
 
 
 }
+
 
 
 
@@ -302,29 +356,27 @@ mostrar();
 function crossfade(){
 
 
-audio2.volume = 0;
+audio2.volume=0;
 
 audio2.play();
 
 
-
-let volume = 0;
-
+let volume=0;
 
 
-let fade = setInterval(()=>{
+let fade=setInterval(()=>{
 
 
-volume += 0.05;
+volume+=0.05;
 
 
-audio1.volume = 1 - volume;
+audio1.volume=1-volume;
 
-audio2.volume = volume;
+audio2.volume=volume;
 
 
 
-if(volume >= 1){
+if(volume>=1){
 
 
 clearInterval(fade);
@@ -346,6 +398,7 @@ audio1.pause();
 
 
 
+
 // ==================================
 // INICIAR
 // ==================================
@@ -361,7 +414,7 @@ conteudo.style.display="block";
 
 
 
-audio1.volume = 1;
+audio1.volume=1;
 
 audio1.play();
 
@@ -375,10 +428,26 @@ escreverCarta();
 
 setTimeout(()=>{
 
+
 crossfade();
+
 
 },30000);
 
+
+
+});
+
+
+
+
+
+// botão final
+
+botaoFinal.addEventListener("click",()=>{
+
+
+botaoFinal.textContent="Eu escolheria você em todas as vidas ❤️";
 
 
 });
