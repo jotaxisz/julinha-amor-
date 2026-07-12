@@ -307,11 +307,11 @@ function typeWriterLetras(versos, callback){
           if(j % 10 === 0){
             span.scrollIntoView({behavior:'smooth', block:'end'});
           }
-          setTimeout(typeLetra, 35);
+          setTimeout(typeLetra, 15);
         } else {
           i++;
           span.scrollIntoView({behavior:'smooth', block:'end'});
-          setTimeout(typeVerso, 600);
+          setTimeout(typeVerso, 200);
         }
       }
       typeLetra();
